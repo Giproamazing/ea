@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Access Restricted Area</h1>
+    <input type="email" id="emailInput" placeholder="Enter your Gmail address" required>
+    <button id="submitEmail">Submit</button>
+
+    <script>
+        const allowedEmail = "your-email@gmail.com"; // Replace with your Gmail
+        const submitButton = document.getElementById('submitEmail');
+
+        submitButton.addEventListener('click', () => {
+            const emailInput = document.getElementById('emailInput').value;
+
+            if (emailInput === allowedEmail) {
+                alert("Access Granted!");
+                // Redirect to your specified URL
+                window.location.href = "https://giproamazing.github.io/sadasdasdasdasdsad/";
+            } else {
+                alert("Access Denied! You are not allowed to enter.");
+                document.getElementById('emailInput').value = ''; // Clear the input
+            }
+        });
+    </script>
+</body>
+</html>
